@@ -1,0 +1,149 @@
+VULNERABLE API - CONNEXION 3.3.0 ERROR DEMONSTRATION
+=====================================================
+
+Application Command:
+cd C:\Users\Rolando\Vulnerable-API\vulnerable-api-files
+C:\Users\Rolando\venv_fresh\Scripts\python.exe app.py
+
+Terminal Output:
+================
+
+PS C:\Users\Rolando\Vulnerable-API> cd C:\Users\Rolando\Vulnerable-API\vulnerable-api-files ; C:\Users\Rolando\venv_fresh\Scripts\python.exe app.py
+`ConnexionMiddleware.run` is optimized for development. For production, run using a dedicated ASGI server.
+INFO:     Started server process [10808]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50322 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57528 - "GET / HTTP/1.1" 200 OK
+HTTPException(status_code=404, detail='The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.')
+INFO:     127.0.0.1:55245 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+TypeError("reflected() missing 1 required positional argument: 'xss'")
+Traceback (most recent call last):
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\swagger_ui.py", line 223, in __call__
+    await self.router(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 448, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 710, in app
+    await self.default(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\swagger_ui.py", line 236, in default_fn
+    await self.app(original_scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\routing.py", line 158, in __call__
+    await self.router(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 448, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\routing.py", line 48, in __call__
+    await self.next_app(original_scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\abstract.py", line 264, in __call__
+    return await operation(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\security.py", line 106, in __call__
+    await self.next_app(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\abstract.py", line 264, in __call__
+    return await operation(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\request_validation.py", line 142, in __call__
+    await self.next_app(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\abstract.py", line 264, in __call__
+    return await operation(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\lifespan.py", line 26, in __call__
+    await self.next_app(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\abstract.py", line 264, in __call__
+    return await operation(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\middleware\context.py", line 25, in __call__
+    await self.next_app(scope, receive, send)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\apps\flask.py", line 163, in __call__
+    return await self.asgi_app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\a2wsgi\wsgi.py", line 165, in __call__
+    return await responder(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\a2wsgi\wsgi.py", line 200, in __call__
+    await self.loop.run_in_executor(
+        self.executor, func, environ, self.start_response
+    )
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\a2wsgi\wsgi.py", line 256, in wsgi
+    iterable = self.app(environ, start_response)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\apps\flask.py", line 68, in __call__
+    return self.fn(*args, **kwargs)
+           ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\decorators\main.py", line 134, in wrapper
+    return decorated_function(request)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\decorators\response.py", line 172, in wrapper
+    handler_response = function(*args, **kwargs)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\decorators\parameter.py", line 87, in wrapper
+    return function(**kwargs)
+  File "C:\Users\Rolando\venv_fresh\Lib\site-packages\connexion\decorators\main.py", line 123, in wrapper
+    return function(*args, **kwargs)
+TypeError: reflected() missing 1 required positional argument: 'xss'
+INFO:     127.0.0.1:51771 - "POST /api/xssreflected HTTP/1.1" 500 Internal Server Error
+
+
+ERROR ANALYSIS
+==============
+
+Error Type: TypeError
+Error Message: reflected() missing 1 required positional argument: 'xss'
+HTTP Status: 500 Internal Server Error
+Endpoint: POST /api/xssreflected
+
+Root Cause:
+-----------
+Connexion 3.3.0 changed its parameter binding mechanism and no longer recognizes the 'x-body-name' 
+configuration directive in the Swagger/OpenAPI specification. This causes the request body to not be 
+properly mapped to the function parameter.
+
+In swagger.yml, the endpoint is defined as:
+  /api/xssreflected:
+    post:
+      operationId: xss.reflected
+      parameters:
+        - in: body
+          name: xss
+          x-body-name: xss
+          required: true
+          schema: ...
+
+However, connexion 3.3.0 expects a different parameter binding syntax (automatic mapping) that is 
+incompatible with the original code.
+
+Solution:
+---------
+Downgrade to connexion 2.14.1 which properly supports the 'x-body-name' configuration:
+
+C:\Users\Rolando\venv_fresh\Scripts\python.exe -m pip install connexion[swagger-ui]==2.14.1 --force-reinstall
+
+This will restore the original parameter binding functionality and the application will work correctly.
