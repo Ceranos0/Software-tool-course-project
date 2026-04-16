@@ -1,0 +1,4 @@
+The work completed so far,
+
+  Establish how to perform XSS cross site scripting attack. But the result failed due to pip install being on newer editons and not the correct ones for the project.
+Aiming to redo the XSS attack and attempt to do SQlLi injection attack next
