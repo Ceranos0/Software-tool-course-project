@@ -1,1 +1,5 @@
+First attempt at using burp suite for XSS attack, was successfully but overall failed due to server dependacy being too recent,
+instead of depency being the exact verison it rely on. 
 
+I was able to idnetified XSS vulnerability located at /api/xssreflected endpoint with unescaped input.
+Issue: Connexion verison was 3.3.0, which broke the code and led to a type error
