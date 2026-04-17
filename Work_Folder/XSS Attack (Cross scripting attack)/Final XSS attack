@@ -1,0 +1,8 @@
+When performing the XSS with the correct dependacy was underwhelming but sucessful
+
+The Attack: Attack send Javascript in the json payload. But when the server recieves the input it does not escape it
+Returning a message "Hello" with the payload, excuting in the vicitim context via the script tag.
+
+In the code the root cause was when username variable was inserted into f-string without sanitization.
+
+Other attacks that can follow this: Cookie theft, Keylogging, Redirection to fake login
