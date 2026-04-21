@@ -12,11 +12,3 @@ def log_request(ip, endpoint, method, status):
             writer.writerow(["timestamp", "ip_address", "endpoint", "method", "status"])
 
         writer.writerow([datetime.now(), ip, endpoint, method, status])
-
-def suspicious_input(text):
-    bad_patterns = ["<script>", "' OR 1=1", "--"]
-
-    for pattern in bad_patterns:
-        if pattern in text:
-            return True
-    return False
